@@ -5,7 +5,7 @@ class App extends React.Component {
         return (
             <div className="container-filuid">
                 <p>Header here...</p>
-                {this.props.children}
+                {this.props.children || "Welcome to Home page"}
             </div>
         );
     }

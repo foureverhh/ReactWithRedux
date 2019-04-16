@@ -5,9 +5,10 @@ class CoursePage extends React.Component {
     constructor(props, context){
         super(props,context);
         this.state={
-            course:{
+            course: {
                 title: ""
-            }
+            },
+            courses: []
         };
         this.onTitleChange = this.onTitleChange.bind(this);
         this.onClickSave = this.onClickSave.bind(this);
@@ -16,18 +17,37 @@ class CoursePage extends React.Component {
     onTitleChange(event){
         const course = this.state.course;
         course.title = event.target.value;
-        this.setState({ course: course });
-        /*
-        this.setState(
-            course: this.state.course.event.target.value
-        );
-        */
-    };
+        this.setState({ 
+            course: course
+        });
+    }
     
     onClickSave(){
         alert(`Saving ${this.state.course.title}`);
-        
+        //const { courses } = this.state;
+        /*
+        this.setState({
+            courses: this.state.courses.push(this.state.course.title),
+            course: {
+                title: ""
+            }
+        });
+        */
+       this.setState(prevState => {
+           courses: prevState.courses.push(this.state.course.title)
+       });
+
+       this.setState({
+           course: {
+                title: ''
+            }
+        });
     }
+
+    componentDidUpdate(){
+        console.log(this.state.courses.length);
+        console.log(this.state.courses); 
+    }  
 
     render() {
         return (

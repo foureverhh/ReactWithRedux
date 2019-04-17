@@ -1,6 +1,7 @@
 export function createCourse(course){
+    debugger;
     return ({
-        type: "CREAT_COURSE",
+        type: "CREATE_COURSE",
         course
     });
 }

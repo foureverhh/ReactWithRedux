@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
 import * as courseActions from '../../actions/courseActions';
-import { bindActionCreator, bindActionCreators } from 'redux';
+import { bindActionCreators } from 'redux';
 //var coursesContainer = [];
 
 class CoursesPage extends React.Component {
